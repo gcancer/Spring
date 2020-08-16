@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- xmlns = xml namespace -->
+	<!-- factory-method : 해당 클래스를 객체화 시킬 때 이 메소드를 사용해서 만들어주세요! -->
+	<!-- private으로 생성 외부 접근 막아두고 getInstance메소드를 통해서 객체를 생성해라~ 이미 객체가 만들어져있다면 객체의 주소를 리턴하게 됨 -->
+	<bean id="singleton" class="com.test01.AbstractTest" factory-method="getInstance"></bean>
+	<!-- 내부적으로 Singleton으로 관리됨 -->
+	
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="test" class="com.test00.TestImpl"></bean>
+	
+	<bean id="name1" class="com.test00.TestImpl">
+		<constructor-arg>
+			<value>내이름</value>
+		</constructor-arg>
+		<constructor-arg value="예~"/>
+	</bean>
+	
+	<bean id="name2" class="com.test00.TestImpl">
+		<constructor-arg index="1" value="인덱스 1"/>
+		<constructor-arg index="0" value="인덱스 0"></constructor-arg>
+	</bean>
+</beans>

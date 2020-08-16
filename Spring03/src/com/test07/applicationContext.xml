@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="ig" class="com.test07.IgTV" lazy-init="true"></bean>	
+	<!-- IoC 컨테이너가 만들어질 때 (bean컨테이너가 만들어질 때) 안에 있는 객체를 생성한다.
+		 Lazy-init=true로 설정하면 해당 Bean이 호출될 때 까지 만들지 않음 -->
+	<bean id="samsong" class="com.test07.SamsongTV"></bean>
+	
+</beans>
