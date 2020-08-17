@@ -10,7 +10,7 @@ public class MTest {
 	public static void main(String[] args) {
 		ApplicationContext factory = new ClassPathXmlApplicationContext("com/test01/applicationContext.xml");
 		//Class생성하면서 setter를 호출함. 
-		//순차적으로 돌기 때문에 호출하는 순서도 의미 없음.
+		//xml을 읽어서 bean을 호출하는 순서는 동일한지..?
 		MyClass my = factory.getBean("myClass", MyClass.class);
 		my.prn();
 		
