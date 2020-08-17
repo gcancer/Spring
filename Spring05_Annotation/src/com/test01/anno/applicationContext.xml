@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- Namespaces 에서 context 체크 -->
+	
+	<context:component-scan base-package="com.test01.anno" ></context:component-scan>
+	<!-- spring container -->
+	<!-- context는 우리가 만들고 있는 프로그램이다~라고 이해하면 됨 -->
+	<!-- container는 뭔가를 가지고 있는 애구나~ -->
+	<!-- base-package : 지정된 폴더아래에 있는 파일 모두 탐색, java .class가 들어있는 패키지
+		있으면 모두 bean으로 등록해준다. -->
+</beans>

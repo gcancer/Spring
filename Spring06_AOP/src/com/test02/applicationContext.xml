@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="woman" class="com.test02.Woman"></bean>
+	<bean id="man" class="com.test02.Man"></bean>
+	
+	<!-- Advice (ccc) : 공통 관심사항 -->
+	<bean id="myAdvice" class="com.test02.MyAspect"/>
+	
+	<!-- Advisor (Aspect) = advice + pointcut-->
+	<bean id="myAdvisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		<property name="advice" ref="myAdvice"/>
+		<property name="expression" value="execution(public * *(..))"/>
+	</bean>
+	
+	<!-- proxy  : 중간에서 가로채는 애-->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
+</beans>

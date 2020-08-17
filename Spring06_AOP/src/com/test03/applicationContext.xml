@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+   <!-- 자동으로 프록시 객체 만들어줌 -->
+   <aop:aspectj-autoproxy />
+   <bean id="man" class="com.test03.Man"/>
+   <bean id="woman" class="com.test03.Woman"/>
+   <bean id="myAspect" class="com.test03.MyAspect"/>
+   
+   <aop:config>
+      <!-- ccc 연결 -->
+      <aop:aspect ref="myAspect">
+      <!-- 이해하기 쉽게 method명 before임 아무거나 됨 -->
+         <aop:before method="before" pointcut="execution(public void com.test03.Woman.classWork())"/>
+         <aop:after method="after" pointcut="execution(public void com.test03.Man.classWork())"/>
+      </aop:aspect>
+   </aop:config>
+
+</beans>

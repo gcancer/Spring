@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 	<bean id="food" class="com.test02.MyFood">
+		<property name="favoriteFood" ref="favoriteFood">
+			<bean class="com.test02.Food">
+				<property name="name" value="망고"></property>
+				<property name="price" value="10000"></property>
+			</bean>
+		</property>
+				<property name="unFavoriteFood" ref="unFavoriteFood">
+			<bean class="com.test02.Food">
+				<property name="name" value="포도"></property>
+				<property name="price" value="5000"></property>
+			</bean>
+		</property>
+	</bean> -->
+	
+	<bean id="favoriteFood" class="com.test02.Food">
+		<constructor-arg name="name" value="회"></constructor-arg>
+		<constructor-arg name="price" value="20000"></constructor-arg>
+	</bean>
+	<bean id="unFavoriteFood" class="com.test02.Food">
+		<constructor-arg name="name" value="해물탕"></constructor-arg>
+		<constructor-arg name="price" value="35000"></constructor-arg>
+	</bean>
+	<bean id="myFood" class="com.test02.MyFood" autowire="byType" />
+	<!-- <bean id="myFood" class="com.test02.MyFood" autowire="byType"></bean> -->
+	<!-- <bean id="myFood" class="com.test02.MyFood" autowire="byName"></bean> -->
+	<!-- <bean id="myFood" class="com.test02.MyFood" autowire="constructor"></bean> -->
+	<!-- <bean id="myFood" class="com.test02.MyFood" autowire="default"></bean> -->
+
+	<!-- 
+		autowire 속성
+		1. default : 생성자에 할당할 type이 있는지 확인 후 (constructor)
+					-> 없으면, setter(메서드)에서 type이 있는지 확인하여 할당 (byType)
+			* 만일 기본생성자가 있으면, 기본생성자 호출 (최우선)
+			* @Autowired 라는 어노테이션이 이 방식으로 동작
+		2. byName : setter와 같은 id 나 name의 bean을 찾아서 자동 할당 ( 둘 중 하나만 같으면 됨)
+		3. byType : setter와 같은 type의 bean을 찾아서 자동 할당
+		4. constructor : 생성자의 parameter와 같은 이름의 bean을 찾아서 자동 할당  // 같은게 없으면 기본 생성자 갖다가 생성해버림
+	 -->
+
+</beans>
