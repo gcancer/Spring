@@ -33,7 +33,8 @@
 	<!-- <bean id="myFood" class="com.test02.MyFood" autowire="default"></bean> -->
 
 	<!-- 
-		autowire 속성
+		@autowired (의존성 주입) : 자동으로 묶어준다 
+		속성
 		1. default : 생성자에 할당할 type이 있는지 확인 후 (constructor)
 					-> 없으면, setter(메서드)에서 type이 있는지 확인하여 할당 (byType)
 			* 만일 기본생성자가 있으면, 기본생성자 호출 (최우선)
